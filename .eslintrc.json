@@ -25,9 +25,9 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["*.test.js", "*.test.tsx", "*.css"],
+  "ignorePatterns": ["*.test.js", "*.test.tsx", "*.css", "*.svg"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".svg"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "no-unused-vars": "warn",
@@ -42,6 +42,34 @@
       "exports": "never",
       "functions": "never"
     }],
-    "object-curly-newline": ["warn"]
+    "object-curly-newline": ["warn"],
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
+
+    // Comments
+    "no-inline-comments": "error",
+    "line-comment-position": ["error", { "position": "above" }],
+    "lines-around-comment": [
+      "error",
+      {
+        "beforeBlockComment": true,
+        "beforeLineComment": false,
+        "allowBlockStart": true,
+        "allowClassStart": true,
+        "allowObjectStart": true,
+        "allowArrayStart": true
+      }
+    ],
+    "multiline-comment-style": ["warn", "bare-block"],
+    "spaced-comment": ["error", "always", { "block": { "balanced": true } }]
   }
 }
